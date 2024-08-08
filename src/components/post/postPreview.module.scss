@@ -1,0 +1,22 @@
+.post {
+  &__title {
+    color: #cccccc;
+    font-family: serif;
+    font-size: x-large;
+    padding-bottom: 10px;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 500px;
+    background-color: #3d3d3d;
+    border: 1px solid #1f1e1e;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}

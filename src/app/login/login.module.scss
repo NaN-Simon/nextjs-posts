@@ -1,0 +1,13 @@
+.main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(31, 31, 31);
+    height: 100vh;
+}
+.login{
+    &__wrapper{
+        min-width: 300px;
+    }
+}

@@ -1,0 +1,28 @@
+.post {
+  &__title {
+    color: #ffffff;
+    font-family: serif;
+    font-size: x-large;
+    padding-bottom: 10px;
+    text-align: center;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+
+  &__body {
+    color: #cccccc;
+    &:first-letter {
+      text-transform: uppercase;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    background-color: #3d3d3d;
+    border: 1px solid #1f1e1e;
+    border-radius: 5px;
+    padding: 10px;
+  }
+}
