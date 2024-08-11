@@ -1,4 +1,5 @@
 import { redirect } from 'next/navigation'
+import { ArticleJsonLd } from 'next-seo';
 
 import Pagination from "@/components/pagination/Pagination";
 import List from "@/components/list/List";
@@ -9,9 +10,11 @@ import { getIsAuth } from '@/app/utils/getIsAuth';
 import "@/styles/globals.css";
 import styles from "./page.module.css";
 
-const Home= async (context: any) => {
+import seoConfig from '../../next-seo.config';
+
+const Home = async (context: any) => {
   const token = await getIsAuth();
-  
+
   // редирект на страницу логина если пользователь еще не авторизован
   if (!token) redirect('/login')
 
@@ -19,10 +22,13 @@ const Home= async (context: any) => {
   const { posts, totalPage } = await getPosts(page);
 
   return (
-    <main className={styles['main']}>
-      <List posts={posts} />
-      <Pagination totalPage={totalPage} currentPage={page} />
-    </main>
+    <>
+      <ArticleJsonLd {...seoConfig} />
+      <main className={styles['main']}>
+        <List posts={posts} />
+        <Pagination totalPage={totalPage} currentPage={page} />
+      </main>
+    </>
   );
 }
 
